@@ -1,0 +1,42 @@
+<mat-toolbar color="primary">
+
+  <span>
+    <img src="../../../assets/img/sintad.png" height="50" alt="">
+  </span>
+
+
+
+  <button mat-button routerLink="/admin/entidad" class="ms-3">
+    Entidad
+  </button>
+  <button mat-button routerLink="/admin/documento" class="ms-3">
+    documento
+  </button>
+  <button mat-button routerLink="/admin/contribuyente" class="ms-3">
+    contribuyente
+  </button>
+
+  <span class="example-spacer"></span>
+
+
+
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+    <button mat-menu-item (click)="logout()">Logout</button>
+  </mat-menu>
+      <button mat-icon-button  [matMenuTriggerFor]="beforeMenu">
+          <span class="material-icons">
+              account_circle
+          </span>
+      </button>
+
+</mat-toolbar>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-12">
+      <br>
+      <br>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

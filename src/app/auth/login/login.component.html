@@ -1,0 +1,48 @@
+
+<div class="contenedor-login">
+
+
+  <div class="login">
+
+
+      <div class="marco">
+          <div class="cont-logo">
+
+              <img class="logo" src="../../../assets/img/sintad.png" style="width:60%;height:auto;">
+
+          </div>
+          <br>
+
+          <form [formGroup]="form" autocomplete="off" (ngSubmit)="login()" >
+
+              <mat-form-field class="mb-2 d-block" appearance="outline">
+                  <mat-label>Usuario</mat-label>
+                  <input matInput type="text" placeholder="Usuario" required formControlName="user">
+              </mat-form-field>
+
+              <mat-form-field class="mb-2 d-block" appearance="outline">
+                  <mat-label>Contraseña</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'" placeholder="Contraseña" required
+                      formControlName="pass">
+
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                      [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+
+              </mat-form-field>
+
+
+              <br>
+              <div class="text-end">
+                  <button type="submit" class="btn btn-primary" mat-flat-button color="primary"
+                      [disabled]="form.invalid">
+                      Ingresar
+                  </button>
+
+              </div>
+          </form>
+      </div>
+  </div>
+
+</div>

@@ -1,0 +1,75 @@
+<h2 class="text-center">{{titulo}}</h2>
+<div class="row" style="padding-bottom:30px;">
+  <div class="col-md-12">
+    <div *ngIf="formulario">
+      <form action="" autocomplete="off" [formGroup]="formulario" (ngSubmit)="save()">
+
+
+        <div class=" row justify-content-center">
+          <div class="col-md-12" style="width: 40%;">
+
+
+
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>Tipo de Documento</mat-label>
+              <mat-select formControlName="documento">
+                <mat-option *ngFor="let doc of documentos" [value]="doc">{{doc.nombre}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>N° Documento</mat-label>
+              <input matInput formControlName="nroDocumento">
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>Razon Social</mat-label>
+              <input matInput formControlName="razonSocial">
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>Nombre Comercial</mat-label>
+              <input matInput formControlName="nombreComercial">
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>Tipo de Contribuyente</mat-label>
+              <mat-select formControlName="contribuyente">
+
+                <mat-option *ngFor="let cont of contribuyentes" [value]="cont">{{cont.nombre}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>direccion</mat-label>
+              <input matInput formControlName="direccion">
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>Telefono</mat-label>
+              <input matInput formControlName="telefono">
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>Estado</mat-label>
+              <mat-select formControlName="estado">
+                <mat-option  value="true">Activo</mat-option>
+                <mat-option   value="false">Inactivo</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+
+
+
+
+
+
+
+            <div class="text-end">
+              <button mat-raised-button routerLink="/admin/entidad">Cancelar</button>
+              <button mat-raised-button color="primary">{{titulo}}</button>
+            </div>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
